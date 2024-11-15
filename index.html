@@ -18,17 +18,18 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <title>InsightIQ</title>
+    <title>Sminco filter dhashboard</title>
 </head>
 
 <body>
     <!-- Main Container -->
     <div class="container-fluid px-0">
         <div class="row">
-            <!-- Sidebar Column -->
+            <!-- Sidebar Column ::START-->
             <div class="col-12 col-md-3 sidebar d-flex flex-column">
                 <div class="text-center mb-4">
-                    <img src="./images/mainlogo.png" width="110px" class="img-fluid" alt="Logo" />
+                    <img src="https://sminco.in/static/media/Sminco_Black.40ea3839f40076f44d8a.png" width="110px"
+                        class="img-fluid" alt="Logo" />
                 </div>
                 <ul class="flex-grow-1">
                     <li class="active"><i class="fa fa-search"></i> Creator search</li>
@@ -43,112 +44,118 @@
                     <li><i class="fas fa-user-circle"></i> Your account</li>
                 </ul>
             </div>
+            <!-- Sidebar Column ::START-->
 
-            <!-- Main Content Column -->
-            <div class="col-12 col-md-9 main-content pl-0">
+            <!-- Main Content Column ::START -->
+            <div class="col-12 col-md-9 main-content topbar pl-0">
                 <div class="header-notice">
                     You can connect up to 25 creator profiles. <a href="#">Upgrade</a> and invite all the creators you
                     need.
                 </div>
-
-                <!-- NAVTABS PART -->
-                <div class="container">
-                    <div class="navtbasmain">
-                        <div class="navtabhead d-flex justify-content-between align-items-center">
-                            <h2 class="py-4">Discover creators</h2>
-                            <div class="navtabsidebutton">
-                                <button class="btn">Your creator lists</button>
+                <!-- Main Content Column ::START -->
+                <!-- FILTERS SECTION ::START-->
+                <div class="filtersection">
+                    <div class="container">
+                        <form>
+                            <div class="row pt-5">
+                                <div class="col-md-2">
+                                    <select class="form-select form-control" aria-label="Default select example">
+                                        <option value="1"><img
+                                                src="https://www.radiocity.in/rc-new/images/facebook.png" />
+                                            Instagram
+                                        </option>
+                                        <option value="2">Facebook</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <select class="form-select form-control" aria-label="Default select example">
+                                        <option value="1">
+                                            Followers
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Topics" />
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn main-button">
+                                        GET RESULT
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <ul class="border-0 nav nav-tabs tabswitch" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link filter-tabs active" id="home-tab" data-toggle="tab"
-                                            href="#home" role="tab" aria-controls="home" aria-selected="true"><i
-                                                class="fas fa-filter"></i> Followers</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
-                                            role="tab" aria-controls="profile" aria-selected="false"><i
-                                                class="fas fa-user-plus"></i> Topics</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
-                                            role="tab" aria-controls="contact" aria-selected="false"><i
-                                                class="fas fa-exchange-alt"></i>creator's location</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
-                                            role="tab" aria-controls="contact" aria-selected="false"><i
-                                                class="fas fa-exchange-alt"></i>Contact option</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
-                                            role="tab" aria-controls="contact" aria-selected="false"><i
-                                                class="fas fa-exchange-alt"></i>Audience location</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
-                                            role="tab" aria-controls="contact" aria-selected="false"><i
-                                                class="fas fa-exchange-alt"></i>Average likes</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
-                                            role="tab" aria-controls="contact" aria-selected="false"><i
-                                                class="fas fa-exchange-alt"></i>Engagement rate</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
-                                            role="tab" aria-controls="contact" aria-selected="false"><i
-                                                class="fas fa-exchange-alt"></i>Has sponsored posts</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tab-content" id="myTabContent">
-                            <!-- First Tab with Filter Section -->
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <!-- Filter Section Moved Here -->
-                                <div class="filter-section p-3">
-                                    <div class="d-flex flex-wrap align-items-center">
-                                        <i class="fab fa-instagram filter-icon"></i>
-                                        <select class="form-control filter-select">
-                                            <option>Followers</option>
-                                            <option>Engagement rate</option>
-                                        </select>
-                                        <input type="text" class="form-control filter-input"
-                                            placeholder="Topics e.g. Baking">
-                                        <button class="btn btn-primary get-results-btn">Get results</button>
-                                    </div>
-
-                                    <!-- Advanced Filters -->
-                                    <div class="d-flex flex-wrap align-items-center mt-3">
-                                        <select class="form-control filter-select">
-                                            <option>Audience location</option>
-                                        </select>
-                                        <select class="form-control filter-select">
-                                            <option>Audience age</option>
-                                        </select>
-                                        <select class="form-control filter-select">
-                                            <option>Audience gender</option>
-                                        </select>
-                                        <select class="form-control filter-select">
-                                            <option>Creator's location</option>
-                                        </select>
-                                        <button class="btn btn-link more-filters-btn">More filters</button>
+                        </form>
+                        <!-- SECOND AND MAIN FILTER -->
+                        <form>
+                            <div class="main">
+                                <div class="mainfilter">
+                                    <div class="row pt-5">
+                                        <div class="col-md-2 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">
+                                                    Followers
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option>Topics</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">
+                                                    Creator's location
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">
+                                                    Contact Options
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">
+                                                    Audience location
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">
+                                                    Average likes
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">
+                                                    Engagement rate
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">
+                                                    Has sponsored posts
+                                                </option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Other Tabs -->
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">SECOND
-                                TAB
-                            </div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">THIRD
-                                TAB
-                            </div>
-                        </div>
+                        </form>
+                        <!-- SECOND AND MAIN FILTER -->
                     </div>
                 </div>
             </div>
