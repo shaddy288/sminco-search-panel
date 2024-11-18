@@ -338,3 +338,6 @@ body {
 .tooltip-link:hover::after {
     opacity: 1;
 }
+.table-responsive {
+    height: 400px;
+}

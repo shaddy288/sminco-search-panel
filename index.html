@@ -10,22 +10,41 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="style/style.css">
 
     <!-- Bootstrap JavaScript and dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <title>Sminco filter dhashboard</title>
+    <title>Sminco Filter Dashboard</title>
+
+    <style>
+        /* Responsive table column hiding */
+        @media (max-width: 768px) {
+
+            /* Hide non-essential columns for small screens */
+            .creator-table th:nth-child(3),
+            .creator-table td:nth-child(3),
+            .creator-table th:nth-child(5),
+            .creator-table td:nth-child(5) {
+                display: none;
+            }
+        }
+
+        .creator-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Main Container -->
     <div class="container-fluid px-0">
         <div class="row">
-            <!-- Sidebar Column ::START-->
+            <!-- Sidebar Column -->
             <div class="col-12 col-md-2 sidebar d-flex flex-column">
                 <div class="text-center mb-4">
                     <img src="https://sminco.in/static/media/Sminco_Black.40ea3839f40076f44d8a.png" width="110px"
@@ -44,34 +63,29 @@
                     <li><i class="fas fa-user-circle"></i> Your account</li>
                 </ul>
             </div>
-            <!-- Sidebar Column ::START-->
+            <!-- Sidebar Column -->
 
-            <!-- Main Content Column ::START -->
+            <!-- Main Content Column -->
             <div class="col-12 col-md-10 main-content topbar pl-0">
                 <div class="header-notice">
                     You can connect up to 25 creator profiles. <a href="#">Upgrade</a> and invite all the creators you
                     need.
                 </div>
-                <!-- Main Content Column ::START -->
-                <!-- FILTERS SECTION ::START-->
+
+                <!-- Filters Section -->
                 <div class="filtersection">
                     <div class="container">
                         <form>
                             <div class="row pt-5">
                                 <div class="col-md-2">
                                     <select class="form-select form-control" aria-label="Default select example">
-                                        <option value="1"><img
-                                                src="https://www.radiocity.in/rc-new/images/facebook.png" />
-                                            Instagram
-                                        </option>
+                                        <option value="1">Instagram</option>
                                         <option value="2">Facebook</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
                                     <select class="form-select form-control" aria-label="Default select example">
-                                        <option value="1">
-                                            Followers
-                                        </option>
+                                        <option value="1">Followers</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
@@ -84,80 +98,10 @@
                                 </div>
                             </div>
                         </form>
-                        <!-- SECOND AND MAIN FILTER -->
-                        <form>
-                            <div class="main">
-                                <div class="mainfilter">
-                                    <div class="row pt-5">
-                                        <div class="col-md-2 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">
-                                                    Followers
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option>Topics</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">
-                                                    Creator's location
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">
-                                                    Contact Options
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">
-                                                    Audience location
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">
-                                                    Average likes
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">
-                                                    Engagement rate
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">
-                                                    Has sponsored posts
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- SECOND AND MAIN FILTER -->
                     </div>
                 </div>
+
+                <!-- Creator List -->
                 <div class="creator-list pt-4">
                     <div class="container">
                         <div class="creator-list-head">
@@ -168,6 +112,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Responsive Table -->
                 <div class="creator-table">
                     <div class="container">
                         <div class="table-responsive">
@@ -186,6 +132,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Dummy Data Rows -->
                                     <tr>
                                         <td>
                                             <input type="checkbox">
@@ -193,37 +140,15 @@
                                         <td>
                                             <img src="https://via.placeholder.com/40" alt="Avatar"
                                                 class="creator-avatar">
-                                            MAKE OUT HILL
+                                            John Doe
                                         </td>
-                                        <td>20.8M</td>
-                                        <td>33.6M</td>
-                                        <td>161.11%</td>
-                                        <td>0%</td>
+                                        <td>1.2M</td>
+                                        <td>34K</td>
+                                        <td>2.83%</td>
+                                        <td>10%</td>
                                         <td>
                                             <button class="btn btn-light btn-sm">
-                                                <i class="bi bi-three-dots"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr class="table-primary">
-                                        <td>
-                                            <input type="checkbox">
-                                        </td>
-                                        <td>
-                                            <img src="https://via.placeholder.com/40" alt="Avatar"
-                                                class="creator-avatar">
-                                            <a href="https://instagram.com/thv" target="_blank" class="tooltip-link"
-                                                data-tooltip="Visit @thv on Instagram">
-                                                @thv
-                                            </a>
-                                        </td>
-                                        <td>65.9M</td>
-                                        <td>11.8M</td>
-                                        <td>17.89%</td>
-                                        <td>0%</td>
-                                        <td>
-                                            <button class="btn btn-light btn-sm">
-                                                <i class="bi bi-three-dots"></i>
+                                                <i class="fas fa-ellipsis-h"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -234,15 +159,15 @@
                                         <td>
                                             <img src="https://via.placeholder.com/40" alt="Avatar"
                                                 class="creator-avatar">
-                                            Just An Egg
+                                            Jane Smith
                                         </td>
-                                        <td>5.1M</td>
-                                        <td>11M</td>
-                                        <td>213.36%</td>
-                                        <td><a href="#" class="tooltip-link" data-tooltip="View details">Check</a></td>
+                                        <td>800K</td>
+                                        <td>25K</td>
+                                        <td>3.12%</td>
+                                        <td>5%</td>
                                         <td>
                                             <button class="btn btn-light btn-sm">
-                                                <i class="bi bi-three-dots"></i>
+                                                <i class="fas fa-ellipsis-h"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -253,15 +178,15 @@
                                         <td>
                                             <img src="https://via.placeholder.com/40" alt="Avatar"
                                                 class="creator-avatar">
-                                            M S Dhoni
+                                            Alice Wonderland
                                         </td>
-                                        <td>49.6M</td>
-                                        <td>9.3M</td>
-                                        <td>18.86%</td>
-                                        <td>0.47%</td>
+                                        <td>2M</td>
+                                        <td>70K</td>
+                                        <td>3.5%</td>
+                                        <td>15%</td>
                                         <td>
                                             <button class="btn btn-light btn-sm">
-                                                <i class="bi bi-three-dots"></i>
+                                                <i class="fas fa-ellipsis-h"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -272,15 +197,15 @@
                                         <td>
                                             <img src="https://via.placeholder.com/40" alt="Avatar"
                                                 class="creator-avatar">
-                                            Chelsea Mazur
+                                            Bob Builder
                                         </td>
-                                        <td>119.5K</td>
-                                        <td>8M</td>
-                                        <td>6657.29%</td>
-                                        <td>9.27%</td>
+                                        <td>500K</td>
+                                        <td>20K</td>
+                                        <td>4%</td>
+                                        <td>2%</td>
                                         <td>
                                             <button class="btn btn-light btn-sm">
-                                                <i class="bi bi-three-dots"></i>
+                                                <i class="fas fa-ellipsis-h"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -291,15 +216,72 @@
                                         <td>
                                             <img src="https://via.placeholder.com/40" alt="Avatar"
                                                 class="creator-avatar">
-                                            SUGA of BTS 민윤기
+                                            Charlie Chaplin
                                         </td>
-                                        <td>49.1M</td>
-                                        <td>7.8M</td>
-                                        <td>15.94%</td>
-                                        <td>0%</td>
+                                        <td>1.5M</td>
+                                        <td>60K</td>
+                                        <td>3.9%</td>
+                                        <td>8%</td>
                                         <td>
                                             <button class="btn btn-light btn-sm">
-                                                <i class="bi bi-three-dots"></i>
+                                                <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/40" alt="Avatar"
+                                                class="creator-avatar">
+                                            Charlie Chaplin
+                                        </td>
+                                        <td>1.5M</td>
+                                        <td>60K</td>
+                                        <td>3.9%</td>
+                                        <td>8%</td>
+                                        <td>
+                                            <button class="btn btn-light btn-sm">
+                                                <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/40" alt="Avatar"
+                                                class="creator-avatar">
+                                            Charlie Chaplin
+                                        </td>
+                                        <td>1.5M</td>
+                                        <td>60K</td>
+                                        <td>3.9%</td>
+                                        <td>8%</td>
+                                        <td>
+                                            <button class="btn btn-light btn-sm">
+                                                <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox">
+                                        </td>
+                                        <td>
+                                            <img src="https://via.placeholder.com/40" alt="Avatar"
+                                                class="creator-avatar">
+                                            Charlie Chaplin
+                                        </td>
+                                        <td>1.5M</td>
+                                        <td>60K</td>
+                                        <td>3.9%</td>
+                                        <td>8%</td>
+                                        <td>
+                                            <button class="btn btn-light btn-sm">
+                                                <i class="fas fa-ellipsis-h"></i>
                                             </button>
                                         </td>
                                     </tr>
@@ -308,8 +290,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- Responsive Table -->
             </div>
         </div>
+    </div>
 </body>
 
 </html>
