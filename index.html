@@ -37,6 +37,18 @@
             height: 40px;
             border-radius: 50%;
         }
+
+        .main-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .main-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -52,25 +64,16 @@
                 </div>
                 <ul class="flex-grow-1">
                     <li class="active"><i class="fa fa-search"></i> Creator search</li>
-                    <li><i class="fas fa-user-plus"></i> Creator onboarding</li>
-                    <li><i class="fas fa-bullhorn"></i> Campaigns</li>
-                </ul>
-
-                <!-- Footer Links at the Bottom -->
-                <ul class="sidebar-footer mt-auto">
-                    <li><i class="fas fa-headset"></i> Talk to us</li>
-                    <li><i class="fas fa-code"></i> For developers</li>
-                    <li><i class="fas fa-user-circle"></i> Your account</li>
                 </ul>
             </div>
             <!-- Sidebar Column -->
 
             <!-- Main Content Column -->
             <div class="col-12 col-md-10 main-content topbar pl-0">
-                <div class="header-notice">
+                <!-- <div class="header-notice alert alert-info">
                     You can connect up to 25 creator profiles. <a href="#">Upgrade</a> and invite all the creators you
                     need.
-                </div>
+                </div> -->
 
                 <!-- Filters Section -->
                 <div class="filtersection">
@@ -100,6 +103,48 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- Additional Filters -->
+                <form>
+                    <div class="container">
+                        <div class="main">
+                            <div class="mainfilter">
+                                <div class="row pt-5">
+                                    <div class="col-md-2 mb-2">
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                            <option value="1">Followers</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-2">
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                            <option>Topics</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-2">
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                            <option value="1">Creator's location</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-2">
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                            <option value="1">Contact Options</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-2">
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                            <option value="1">Audience location</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-2">
+                                        <select class="form-select form-control" aria-label="Default select example">
+                                            <option value="1">Average likes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
                 <!-- Creator List -->
                 <div class="creator-list pt-4">
@@ -134,9 +179,7 @@
                                 <tbody>
                                     <!-- Dummy Data Rows -->
                                     <tr>
-                                        <td>
-                                            <input type="checkbox">
-                                        </td>
+                                        <td><input type="checkbox"></td>
                                         <td>
                                             <img src="https://via.placeholder.com/40" alt="Avatar"
                                                 class="creator-avatar">
@@ -153,9 +196,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <input type="checkbox">
-                                        </td>
+                                        <td><input type="checkbox"></td>
                                         <td>
                                             <img src="https://via.placeholder.com/40" alt="Avatar"
                                                 class="creator-avatar">
@@ -172,9 +213,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <input type="checkbox">
-                                        </td>
+                                        <td><input type="checkbox"></td>
                                         <td>
                                             <img src="https://via.placeholder.com/40" alt="Avatar"
                                                 class="creator-avatar">
@@ -191,18 +230,15 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td><input type="checkbox"></td>
                                         <td>
-                                            <input type="checkbox">
+                                            <img src="https://via.placeholder.com/40" alt="Avatar" class="creator-avatar">
+                                            Alice Wonderland
                                         </td>
-                                        <td>
-                                            <img src="https://via.placeholder.com/40" alt="Avatar"
-                                                class="creator-avatar">
-                                            Bob Builder
-                                        </td>
-                                        <td>500K</td>
-                                        <td>20K</td>
-                                        <td>4%</td>
-                                        <td>2%</td>
+                                        <td>2M</td>
+                                        <td>70K</td>
+                                        <td>3.5%</td>
+                                        <td>15%</td>
                                         <td>
                                             <button class="btn btn-light btn-sm">
                                                 <i class="fas fa-ellipsis-h"></i>
@@ -210,18 +246,15 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td><input type="checkbox"></td>
                                         <td>
-                                            <input type="checkbox">
+                                            <img src="https://via.placeholder.com/40" alt="Avatar" class="creator-avatar">
+                                            Alice Wonderland
                                         </td>
-                                        <td>
-                                            <img src="https://via.placeholder.com/40" alt="Avatar"
-                                                class="creator-avatar">
-                                            Charlie Chaplin
-                                        </td>
-                                        <td>1.5M</td>
-                                        <td>60K</td>
-                                        <td>3.9%</td>
-                                        <td>8%</td>
+                                        <td>2M</td>
+                                        <td>70K</td>
+                                        <td>3.5%</td>
+                                        <td>15%</td>
                                         <td>
                                             <button class="btn btn-light btn-sm">
                                                 <i class="fas fa-ellipsis-h"></i>
@@ -229,56 +262,15 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td><input type="checkbox"></td>
                                         <td>
-                                            <input type="checkbox">
+                                            <img src="https://via.placeholder.com/40" alt="Avatar" class="creator-avatar">
+                                            Alice Wonderland
                                         </td>
-                                        <td>
-                                            <img src="https://via.placeholder.com/40" alt="Avatar"
-                                                class="creator-avatar">
-                                            Charlie Chaplin
-                                        </td>
-                                        <td>1.5M</td>
-                                        <td>60K</td>
-                                        <td>3.9%</td>
-                                        <td>8%</td>
-                                        <td>
-                                            <button class="btn btn-light btn-sm">
-                                                <i class="fas fa-ellipsis-h"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox">
-                                        </td>
-                                        <td>
-                                            <img src="https://via.placeholder.com/40" alt="Avatar"
-                                                class="creator-avatar">
-                                            Charlie Chaplin
-                                        </td>
-                                        <td>1.5M</td>
-                                        <td>60K</td>
-                                        <td>3.9%</td>
-                                        <td>8%</td>
-                                        <td>
-                                            <button class="btn btn-light btn-sm">
-                                                <i class="fas fa-ellipsis-h"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox">
-                                        </td>
-                                        <td>
-                                            <img src="https://via.placeholder.com/40" alt="Avatar"
-                                                class="creator-avatar">
-                                            Charlie Chaplin
-                                        </td>
-                                        <td>1.5M</td>
-                                        <td>60K</td>
-                                        <td>3.9%</td>
-                                        <td>8%</td>
+                                        <td>2M</td>
+                                        <td>70K</td>
+                                        <td>3.5%</td>
+                                        <td>15%</td>
                                         <td>
                                             <button class="btn btn-light btn-sm">
                                                 <i class="fas fa-ellipsis-h"></i>
