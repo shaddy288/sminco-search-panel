@@ -256,30 +256,22 @@ body {
 .mainfilter .row {
     display: flex;
     flex-wrap: nowrap;
-    /* Prevents wrapping to keep everything in one line */
     overflow-x: auto;
-    /* Adds horizontal scroll */
     padding-bottom: 10px;
-    /* Adds a little space below to show the scrollbar */
     scrollbar-width: thin;
-    /* For Firefox, makes scrollbar thinner */
 }
 
 .mainfilter .row::-webkit-scrollbar {
     height: 8px;
-    /* Adjusts scrollbar height for horizontal scroll */
 }
 
 .mainfilter .row::-webkit-scrollbar-thumb {
     background-color: #ccc;
-    /* Custom color for scrollbar thumb */
     border-radius: 4px;
-    /* Rounds the edges of scrollbar thumb */
 }
 
 .mainfilter .row>div {
     min-width: 180px;
-    /* Ensures a consistent width for each select container */
 }
 
 .creator-count {
@@ -341,3 +333,7 @@ body {
 .table-responsive {
     height: 350px;
 }
+
+
+
+
