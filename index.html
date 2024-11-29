@@ -19,82 +19,84 @@
 
     <title>Sminco Filter Dashboard</title>
 
-<style>
-    /* General Body Styles */
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #333;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
-
-
-
-    .sidebar ul {
-        padding: 0;
-        list-style: none;
-    }
-
-    .sidebar ul li {
-        padding: 10px 15px;
-        border-bottom: 1px solid #474f57;
-    }
-
-
-    /* Top Bar Styles */
-    .topbar {
-        padding: 20px;
-        background: #fff;
-    }
-
-    /* Table Styles */
-    .table {
-        background: #fff;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-
-    th, td {
-        text-align: left;
-        padding: 12px;
-    }
-
-    /* Buttons */
-    .btn-light {
-        border: 1px solid #ddd;
-    }
-
-    /* Responsive handling */
-    @media (max-width: 768px) {
-        .creator-table th:nth-child(3),
-        .creator-table td:nth-child(3),
-        .creator-table th:nth-child(5),
-        .creator-table td:nth-child(5) {
-            display: none;
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-    }
 
-    /* Creator info and handle styles */
-    .creator-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
 
-    .creator-info {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: normal;
-    }
 
-    .handle {
-        display: block;
-        color: #6c757d;
-        font-size: 14px;
-    }
-</style>
+        .sidebar ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 10px 15px;
+            border-bottom: 1px solid #474f57;
+        }
+
+
+        /* Top Bar Styles */
+        .topbar {
+            padding: 20px;
+            background: #fff;
+        }
+
+        /* Table Styles */
+        .table {
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        th,
+        td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        /* Buttons */
+        .btn-light {
+            border: 1px solid #ddd;
+        }
+
+        /* Responsive handling */
+        @media (max-width: 768px) {
+
+            .creator-table th:nth-child(3),
+            .creator-table td:nth-child(3),
+            .creator-table th:nth-child(5),
+            .creator-table td:nth-child(5) {
+                display: none;
+            }
+        }
+
+        /* Creator info and handle styles */
+        .creator-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .creator-info {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+
+        .handle {
+            display: block;
+            color: #6c757d;
+            font-size: 14px;
+        }
+    </style>
 
 </head>
 
@@ -181,20 +183,32 @@
                                             <option value="1">Audience location</option>
                                         </select>
                                     </div>
-                                    <div class="col-md-2 mb-2">
-                                        <select class="form-select form-control" aria-label="Default select example">
-                                            <option value="1">Average likes</option>
-                                        </select>
+                                    <div class="col-md-2">
+                                        <button class="btn main-button" onclick="openNav()">
+                                            <a href="javascript:void(0)" class="text-white">More Filter</a>
+                                        </button>
                                     </div>
-                                    <div class="col-md-2 mb-2">
-                                        <select class="form-select form-control" aria-label="Default select example">
-                                            <option value="1">Engagement rate</option>
-                                        </select>
+                                </div>
+                                <div class="sidenav" id="sideNav">
+                                    <div class="head mb-3">
+                                        <h1 class="text-white">All Filter</h1>
                                     </div>
-                                    <div class="col-md-2 mb-2">
-                                        <select class="form-select form-control" aria-label="Default select example">
-                                            <option value="1">Has sponsored posts?</option>
-                                        </select>
+                                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                                        <h1>&times;</h1>
+                                    </a>
+                                    <div class="row">
+                                        <div class="col-md-3 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">Engagement rate</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 mb-2">
+                                            <select class="form-select form-control"
+                                                aria-label="Default select example">
+                                                <option value="1">Has sponsored posts?</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +248,7 @@
                                 </thead>
                                 <tbody>
                                     <!-- Dummy Data Rows -->
-                                    
+
                                 </tbody>
                             </table>
                         </div>
@@ -245,6 +259,12 @@
         </div>
     </div>
     <script>
+        function openNav() {
+            document.getElementById("sideNav").style.width = "80%";
+        }
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0%";
+        }
         // Simulating fetching data from an API
         async function fetchCreators() {
             return new Promise((resolve) => {
@@ -269,17 +289,17 @@
                 }, 1000); // Simulating network delay
             });
         }
-        
-        
-        async function populateTable() {
-    try {
-        const creators = await fetchCreators();
-        const tableBody = document.querySelector('.table tbody');
-        tableBody.innerHTML = ''; // Clear existing table data
 
-        creators.forEach(creator => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
+
+        async function populateTable() {
+            try {
+                const creators = await fetchCreators();
+                const tableBody = document.querySelector('.table tbody');
+                tableBody.innerHTML = ''; // Clear existing table data
+
+                creators.forEach(creator => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
                 <td><input type="checkbox"></td>
                 <td>
                     <img src="${creator.avatar}" alt="Avatar" class="creator-avatar">
@@ -298,16 +318,16 @@
                     </button>
                 </td>
             `;
-            tableBody.appendChild(row);
-        });
-    } catch (error) {
-        console.error("Failed to fetch creators:", error);
-    }
-}
-        
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error("Failed to fetch creators:", error);
+            }
+        }
+
         window.onload = populateTable;
-        </script>
-        
+    </script>
+
 
 
 
