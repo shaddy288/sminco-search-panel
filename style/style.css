@@ -333,6 +333,14 @@ body {
 
 .table-responsive {
     height: 350px;
+    overflow-x: auto !important;
+    /* This allows horizontal scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* For smoother scrolling on mobile */
+}
+.table {
+    min-width: 800px;
+    /* Adjust this width based on your table content */
 }
 
 .sidenav {
@@ -356,4 +364,10 @@ body {
     color: #fff !important;
     font-size: 50px;
     text-decoration: none;
+}
+
+.downButton {
+    position: absolute;
+    right: 100px;
+    bottom: 50px;
 }

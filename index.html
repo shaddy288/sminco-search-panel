@@ -29,8 +29,6 @@
             padding: 0;
         }
 
-
-
         .sidebar ul {
             padding: 0;
             list-style: none;
@@ -40,7 +38,6 @@
             padding: 10px 15px;
             border-bottom: 1px solid #474f57;
         }
-
 
         /* Top Bar Styles */
         .topbar {
@@ -210,6 +207,16 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="downButton">
+                                        <div class="row">
+                                            <button class="btn main-button">
+                                                CLEAR RESULT
+                                            </button>
+                                            <button class="btn main-button ml-4">
+                                                GET RESULT
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +229,8 @@
                         <div class="creator-list-head">
                             <ul class="list-unstyled d-flex justify-content-between">
                                 <li class="creator-count">127.8M creators found</li>
-                                <li class="creator-count">Export CSV</li>
+                                <li class="creator-count"><i class="fa fa-share" aria-hidden="true"></i>
+                                    Export CSV</li>
                             </ul>
                         </div>
                     </div>
@@ -243,6 +251,7 @@
                                         <th scope="col">Average Likes</th>
                                         <th scope="col">Engagement Rate</th>
                                         <th scope="col">Intent to Buy Product</th>
+                                        <th scope="col">Sminco</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -312,6 +321,11 @@
                 <td>${creator.averageLikes}</td>
                 <td>${creator.engagementRate}</td>
                 <td>${creator.intentToBuy}</td>
+                 <td>
+                    <button class="btn btn-light btn-sm">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </button>
+                </td>
                 <td>
                     <button class="btn btn-light btn-sm">
                         <i class="fas fa-ellipsis-h"></i>
@@ -327,10 +341,6 @@
 
         window.onload = populateTable;
     </script>
-
-
-
-
 </body>
 
 </html>
