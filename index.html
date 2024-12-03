@@ -4,15 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <link rel="stylesheet" href="style/style.css">
 
-    <!-- Bootstrap JavaScript and dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -20,7 +15,6 @@
     <title>Sminco Filter Dashboard</title>
 
     <style>
-        /* General Body Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
@@ -39,13 +33,11 @@
             border-bottom: 1px solid #474f57;
         }
 
-        /* Top Bar Styles */
         .topbar {
             padding: 20px;
             background: #fff;
         }
 
-        /* Table Styles */
         .table {
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -58,12 +50,10 @@
             padding: 12px;
         }
 
-        /* Buttons */
         .btn-light {
             border: 1px solid #ddd;
         }
 
-        /* Responsive handling */
         @media (max-width: 768px) {
 
             .creator-table th:nth-child(3),
@@ -73,8 +63,6 @@
                 display: none;
             }
         }
-
-        /* Creator info and handle styles */
         .creator-avatar {
             width: 40px;
             height: 40px;
@@ -98,10 +86,8 @@
 </head>
 
 <body>
-    <!-- Main Container -->
     <div class="container-fluid px-0">
         <div class="row">
-            <!-- Sidebar Column -->
             <div class="col-12 col-md-2 sidebar d-flex flex-column">
                 <div class="text-center mb-4">
                     <img src="https://sminco.in/static/media/Sminco_Black.40ea3839f40076f44d8a.png" width="110px"
@@ -111,16 +97,7 @@
                     <li class="active"><i class="fa fa-search"></i> Creator search</li>
                 </ul>
             </div>
-            <!-- Sidebar Column -->
-
-            <!-- Main Content Column -->
             <div class="col-12 col-md-10 main-content topbar pl-0">
-                <!-- <div class="header-notice alert alert-info">
-                    You can connect up to 25 creator profiles. <a href="#">Upgrade</a> and invite all the creators you
-                    need.
-                </div> -->
-
-                <!-- Filters Section -->
                 <div class="filtersection">
                     <div class="container">
                         <form>
@@ -148,8 +125,6 @@
                         </form>
                     </div>
                 </div>
-
-                <!-- Additional Filters -->
                 <form>
                     <div class="container">
                         <div class="main">
@@ -223,7 +198,6 @@
                     </div>
                 </form>
 
-                <!-- Creator List -->
                 <div class="creator-list pt-4">
                     <div class="container">
                         <div class="creator-list-head">
@@ -235,8 +209,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Responsive Table -->
                 <div class="creator-table">
                     <div class="container">
                         <div class="table-responsive">
@@ -250,20 +222,16 @@
                                         <th scope="col">Followers</th>
                                         <th scope="col">Average Likes</th>
                                         <th scope="col">Engagement Rate</th>
-                                        <th scope="col">Intent to Buy Product</th>
                                         <th scope="col">Sminco</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Dummy Data Rows -->
-
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <!-- Responsive Table -->
             </div>
         </div>
     </div>
@@ -274,7 +242,6 @@
         function closeNav() {
             document.getElementById("sideNav").style.width = "0%";
         }
-        // Simulating fetching data from an API
         async function fetchCreators() {
             return new Promise((resolve) => {
                 setTimeout(() => {
@@ -295,7 +262,7 @@
                         { name: "Billie Eilish", handle: "@billieeilish", avatar: "https://via.placeholder.com/40", followers: "100M", averageLikes: "1.1M", engagementRate: "3.6%", intentToBuy: "25%" },
                         { name: "Shakira", handle: "@shakira", avatar: "https://via.placeholder.com/40", followers: "110M", averageLikes: "700K", engagementRate: "2.7%", intentToBuy: "19%" }
                     ]);
-                }, 1000); // Simulating network delay
+                }, 1000);
             });
         }
 
@@ -320,7 +287,6 @@
                 <td>${creator.followers}</td>
                 <td>${creator.averageLikes}</td>
                 <td>${creator.engagementRate}</td>
-                <td>${creator.intentToBuy}</td>
                  <td>
                     <button class="btn btn-light btn-sm">
                         <i class="fa fa-check" aria-hidden="true"></i>
