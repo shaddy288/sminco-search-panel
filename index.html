@@ -1,88 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style/style.css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="js/script.js"></script>
     <title>Sminco Filter Dashboard</title>
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar ul {
-            padding: 0;
-            list-style: none;
-        }
-
-        .sidebar ul li {
-            padding: 10px 15px;
-            border-bottom: 1px solid #474f57;
-        }
-
-        .topbar {
-            padding: 20px;
-            background: #fff;
-        }
-
-        .table {
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-
-        th,
-        td {
-            text-align: left;
-            padding: 12px;
-        }
-
-        .btn-light {
-            border: 1px solid #ddd;
-        }
-
-        @media (max-width: 768px) {
-
-            .creator-table th:nth-child(3),
-            .creator-table td:nth-child(3),
-            .creator-table th:nth-child(5),
-            .creator-table td:nth-child(5) {
-                display: none;
-            }
-        }
-        .creator-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .creator-info {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: normal;
-        }
-
-        .handle {
-            display: block;
-            color: #6c757d;
-            font-size: 14px;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -103,18 +31,40 @@
                         <form>
                             <div class="row pt-5">
                                 <div class="col-md-2">
-                                    <select class="form-select form-control" aria-label="Default select example">
-                                        <option value="1">Instagram</option>
-                                        <option value="2">Facebook</option>
+                                    <select class="form-select form-control" aria-label="Default select example" id="platformSelect">
+                                        <option value="insta">Instagram</option>
+                                        <option value="yt">Youtube</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
-                                    <select class="form-select form-control" aria-label="Default select example">
-                                        <option value="1">Followers</option>
+                                    <select id="followersFrom" class="form-select form-control" aria-label="Select minimum followers">
+                                        <option value="0" disabled selected>Followers From</option>
+                                        <option value="1000">1K</option>
+                                        <option value="10000">10K</option>
+                                        <option value="25000">25K</option>
+                                        <option value="50000">50K</option>
+                                        <option value="100000">100K</option>
+                                        <option value="250000">250K</option>
+                                        <option value="500000">500K</option>
+                                        <option value="1000000">>1M</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Topics" />
+                                <div class="col-md-2">
+                                    <select id="followersTo" class="form-select form-control" aria-label="Select maximum followers">
+                                        <option value="0" disabled selected>Followers To</option>
+                                        <option value="1000">1K</option>
+                                        <option value="10000">10K</option>
+                                        <option value="25000">25K</option>
+                                        <option value="50000">50K</option>
+                                        <option value="100000">100K</option>
+                                        <option value="250000">250K</option>
+                                        <option value="500000">500K</option>
+                                        <option value="1000000">>1M</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <input type="text" id="topic" class="form-control" placeholder="Topics e.g. Radio" />
                                 </div>
                                 <div class="col-md-2">
                                     <button class="btn main-button">
@@ -197,19 +147,11 @@
                         </div>
                     </div>
                 </form>
-
-                <div class="creator-list pt-4">
-                    <div class="container">
-                        <div class="creator-list-head">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li class="creator-count">127.8M creators found</li>
-                                <li class="creator-count"><i class="fa fa-share" aria-hidden="true"></i>
-                                    Export CSV</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="filter-summary d-flex justify-content-between align-items-center mt-4 p-3">
+                    <div id="filterTags" class="d-flex flex-wrap align-items-center"></div>
+                    <a href="javascript:void(0);" id="clearFilters" class="remove-all-link">Remove all filters</a>
                 </div>
-                <div class="creator-table">
+                <div class="creator-table pt-2">
                     <div class="container">
                         <div class="table-responsive">
                             <table class="table table-hover">
@@ -229,84 +171,14 @@
                                 <tbody>
                                 </tbody>
                             </table>
+                            <div class="col-md-12 d-flex justify-content-end">
+                                <button id="loadMoreButton" class="btn main-button" onclick="loadMoreCreators()">Load More</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        function openNav() {
-            document.getElementById("sideNav").style.width = "80%";
-        }
-        function closeNav() {
-            document.getElementById("sideNav").style.width = "0%";
-        }
-        async function fetchCreators() {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve([
-                        { name: "Kim Kardashian", handle: "@kimkardashian", avatar: "https://via.placeholder.com/40", followers: "250M", averageLikes: "1.5M", engagementRate: "3.5%", intentToBuy: "25%" },
-                        { name: "Cristiano Ronaldo", handle: "@cristiano", avatar: "https://via.placeholder.com/40", followers: "400M", averageLikes: "2M", engagementRate: "4%", intentToBuy: "30%" },
-                        { name: "Selena Gomez", handle: "@selenagomez", avatar: "https://via.placeholder.com/40", followers: "300M", averageLikes: "1.8M", engagementRate: "3.8%", intentToBuy: "28%" },
-                        { name: "Ellen DeGeneres", handle: "@theellenshow", avatar: "https://via.placeholder.com/40", followers: "120M", averageLikes: "500K", engagementRate: "2.5%", intentToBuy: "18%" },
-                        { name: "Beyoncé", handle: "@beyonce", avatar: "https://via.placeholder.com/40", followers: "250M", averageLikes: "3M", engagementRate: "5%", intentToBuy: "40%" },
-                        { name: "Justin Bieber", handle: "@justinbieber", avatar: "https://via.placeholder.com/40", followers: "230M", averageLikes: "1.2M", engagementRate: "3.2%", intentToBuy: "22%" },
-                        { name: "Taylor Swift", handle: "@taylorswift", avatar: "https://via.placeholder.com/40", followers: "200M", averageLikes: "2.5M", engagementRate: "4.5%", intentToBuy: "35%" },
-                        { name: "Kylie Jenner", handle: "@kyliejenner", avatar: "https://via.placeholder.com/40", followers: "280M", averageLikes: "4M", engagementRate: "6%", intentToBuy: "50%" },
-                        { name: "Lionel Messi", handle: "@leomessi", avatar: "https://via.placeholder.com/40", followers: "350M", averageLikes: "3.5M", engagementRate: "5.5%", intentToBuy: "45%" },
-                        { name: "Rihanna", handle: "@badgalriri", avatar: "https://via.placeholder.com/40", followers: "150M", averageLikes: "800K", engagementRate: "3%", intentToBuy: "20%" },
-                        { name: "Drake", handle: "@champagnepapi", avatar: "https://via.placeholder.com/40", followers: "90M", averageLikes: "600K", engagementRate: "2.8%", intentToBuy: "15%" },
-                        { name: "Ariana Grande", handle: "@arianagrande", avatar: "https://via.placeholder.com/40", followers: "320M", averageLikes: "2.8M", engagementRate: "4.2%", intentToBuy: "38%" },
-                        { name: "The Weeknd", handle: "@theweeknd", avatar: "https://via.placeholder.com/40", followers: "80M", averageLikes: "550K", engagementRate: "2.9%", intentToBuy: "16%" },
-                        { name: "Billie Eilish", handle: "@billieeilish", avatar: "https://via.placeholder.com/40", followers: "100M", averageLikes: "1.1M", engagementRate: "3.6%", intentToBuy: "25%" },
-                        { name: "Shakira", handle: "@shakira", avatar: "https://via.placeholder.com/40", followers: "110M", averageLikes: "700K", engagementRate: "2.7%", intentToBuy: "19%" }
-                    ]);
-                }, 1000);
-            });
-        }
-
-
-        async function populateTable() {
-            try {
-                const creators = await fetchCreators();
-                const tableBody = document.querySelector('.table tbody');
-                tableBody.innerHTML = ''; // Clear existing table data
-
-                creators.forEach(creator => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                <td><input type="checkbox"></td>
-                <td>
-                    <img src="${creator.avatar}" alt="Avatar" class="creator-avatar">
-                    <div class="creator-info">
-                        ${creator.name}<br>
-                        <span class="handle">${creator.handle}</span>
-                    </div>
-                </td>
-                <td>${creator.followers}</td>
-                <td>${creator.averageLikes}</td>
-                <td>${creator.engagementRate}</td>
-                 <td>
-                    <button class="btn btn-light btn-sm">
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                </td>
-                <td>
-                    <button class="btn btn-light btn-sm">
-                        <i class="fas fa-ellipsis-h"></i>
-                    </button>
-                </td>
-            `;
-                    tableBody.appendChild(row);
-                });
-            } catch (error) {
-                console.error("Failed to fetch creators:", error);
-            }
-        }
-
-        window.onload = populateTable;
-    </script>
 </body>
-
 </html>

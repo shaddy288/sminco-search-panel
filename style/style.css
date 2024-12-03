@@ -332,7 +332,7 @@ body {
 }
 
 .table-responsive {
-    height: 350px;
+    height: 430px;
     overflow-x: auto !important;
     /* This allows horizontal scrolling */
     -webkit-overflow-scrolling: touch;
@@ -370,4 +370,114 @@ body {
     position: absolute;
     right: 100px;
     bottom: 50px;
+}
+
+/* main */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #474f57;
+}
+
+.topbar {
+    padding: 20px;
+    background: #fff;
+}
+
+.table {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+th,
+td {
+    text-align: left;
+    padding: 12px;
+}
+
+.btn-light {
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+
+    .creator-table th:nth-child(3),
+    .creator-table td:nth-child(3),
+    .creator-table th:nth-child(5),
+    .creator-table td:nth-child(5) {
+        display: none;
+    }
+}
+.creator-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.creator-info {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.handle {
+    display: block;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.handle a {
+    color: #6c757d !important;
+}
+
+/* Filter css */
+
+.filter-summary {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.filter-tag {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.filter-tag span {
+    margin-right: 8px;
+}
+
+.filter-tag .remove-filter {
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    margin-left: 8px;
+}
+
+.remove-all-link {
+    color: #6a0dad;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
 }
