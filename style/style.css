@@ -355,14 +355,14 @@ body {
     top: 0px;
     height: 100%;
     padding: 0px;
-    right: 0px;
+    right: -15px;
     padding: 20px;
     z-index: 1;
 }
 
 .closebtn {
     position: absolute;
-    right: 30px;
+    right: 40px;
     top: 7px;
     color: #000 !important;
     font-size: 34px;
