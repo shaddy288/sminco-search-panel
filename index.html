@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,13 +32,15 @@
                         <form>
                             <div class="row pt-5">
                                 <div class="col-md-2">
-                                    <select class="form-select form-control" aria-label="Default select example" id="platformSelect">
+                                    <select class="form-select form-control" aria-label="Default select example"
+                                        id="platformSelect">
                                         <option value="insta">Instagram</option>
                                         <option value="yt">Youtube</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
-                                    <select id="followersFrom" class="form-select form-control" aria-label="Select minimum followers">
+                                    <select id="followersFrom" class="form-select form-control"
+                                        aria-label="Select minimum followers">
                                         <option value="0" disabled selected>Followers From</option>
                                         <option value="1000">1K</option>
                                         <option value="10000">10K</option>
@@ -50,7 +53,8 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2">
-                                    <select id="followersTo" class="form-select form-control" aria-label="Select maximum followers">
+                                    <select id="followersTo" class="form-select form-control"
+                                        aria-label="Select maximum followers">
                                         <option value="0" disabled selected>Followers To</option>
                                         <option value="1000">1K</option>
                                         <option value="10000">10K</option>
@@ -62,9 +66,10 @@
                                         <option value="1000000">>1M</option>
                                     </select>
                                 </div>
-                                
+
                                 <div class="col-md-4">
-                                    <input type="text" id="topic" class="form-control" placeholder="Topics e.g. Radio" />
+                                    <input type="text" id="topic" class="form-control"
+                                        placeholder="Topics e.g. Radio" />
                                 </div>
                                 <div class="col-md-2">
                                     <button class="btn main-button">
@@ -119,17 +124,68 @@
                                         <h1>&times;</h1>
                                     </a>
                                     <div class="row">
-                                        <div class="col-md-3 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">Engagement rate</option>
-                                            </select>
+                                        <div class="col-md-4 mb-2">
+                                            <div class="form-group">
+                                                <label class="lableHead" for="exampleFormControlSelect1">Average
+                                                    likes</label>
+                                                <div class="row pt-2">
+                                                    <div class="col-md-6">
+                                                        <select class="form-control" id="exampleFormControlSelect1">
+                                                            <option>From</option>
+                                                            <option value="0">0</option>
+                                                            <option value="100">100</option>
+                                                            <option value="200">200</option>
+                                                            <option value="300">300</option>
+                                                            <option value="400">400</option>
+                                                            <option value="500">500</option>
+                                                            <option value="1000">1000</option>
+                                                            <option value="5000">5k</option>
+                                                            <option value="20000">20k</option>
+                                                            <option value="50000">50k</option>
+                                                            <option value="100000">100k</option>
+                                                            <option value="500000">500k</option>
+                                                            <option value="1000000">>1m</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control" id="exampleFormControlSelect1">
+                                                            <option>To</option>
+                                                            <option value="100">100</option>
+                                                            <option value="200">200</option>
+                                                            <option value="300">300</option>
+                                                            <option value="400">400</option>
+                                                            <option value="500">500</option>
+                                                            <option value="1000">1k</option>
+                                                            <option value="5000">5k</option>
+                                                            <option value="20000">20k</option>
+                                                            <option value="50000">50k</option>
+                                                            <option value="100000">100k</option>
+                                                            <option value="500000">500k</option>
+                                                            <option value="1000000"><span>
+                                                                    << /span>1m</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-md-3 mb-2">
-                                            <select class="form-select form-control"
-                                                aria-label="Default select example">
-                                                <option value="1">Has sponsored posts?</option>
-                                            </select>
+                                        <div class="col-md-4 mb-2">
+                                            <label class="lableHead" for="customRange1">
+                                                <span style="color: #6c3bff; font-weight: bold;">+ Engagement
+                                                    rate</span>
+                                                <i class="bi bi-info-circle" style="color: #6c3bff;"></i>
+                                            </label>
+                                            <div id="rangeValue" class="d-block mt-1 font-weight-bold text-dark">> 0%
+                                            </div>
+                                            <input type="range" class="form-range custom-range" id="customRange1"
+                                                min="0" max="100" value="0" oninput="updateRangeValue(this.value)">
+                                        </div>
+                                        <div class="col-md-4 mb-2">
+                                            <label class="lableHead" for="customRange1">Has sponsored posts?</label>
+                                            <div class="checkbox">
+                                                <input type="checkbox" class="" />
+                                                <span>Only show accounts with sponsored
+                                                    posts</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="downButton">
@@ -172,7 +228,8 @@
                                 </tbody>
                             </table>
                             <div class="col-md-12 d-flex justify-content-end">
-                                <button id="loadMoreButton" class="btn main-button" onclick="loadMoreCreators()">Load More</button>
+                                <button id="loadMoreButton" class="btn main-button" onclick="loadMoreCreators()">Load
+                                    More</button>
                             </div>
                         </div>
                     </div>
@@ -180,5 +237,38 @@
             </div>
         </div>
     </div>
+    <script>
+        // Function to dynamically update the slider value and background
+        function updateRangeValue(value) {
+            const slider = document.getElementById('customRange1');
+            const rangeValue = document.getElementById('rangeValue');
+
+            // Update the displayed range value
+            rangeValue.textContent = `> ${value}%`;
+
+            // Determine background color based on value
+            const percentage = slider.value;
+            let color;
+
+            if (percentage < 33) {
+                color = '#ff6b6b'; // Red for low values
+            } else if (percentage < 66) {
+                color = '#ffc107'; // Yellow for mid values
+            } else {
+                color = '#28a745'; // Green for high values
+            }
+
+            // Apply gradient to slider track
+            slider.style.background = `linear-gradient(to right, ${color} ${percentage}%, #ddd ${percentage}%)`;
+        }
+
+        // Initialize the gradient on page load
+        window.onload = function () {
+            const slider = document.getElementById('customRange1');
+            updateRangeValue(slider.value); // Initialize background dynamically
+        };
+
+    </script>
 </body>
+
 </html>

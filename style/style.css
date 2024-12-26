@@ -338,6 +338,7 @@ body {
     -webkit-overflow-scrolling: touch;
     /* For smoother scrolling on mobile */
 }
+
 .table {
     min-width: 800px;
     /* Adjust this width based on your table content */
@@ -345,25 +346,27 @@ body {
 
 .sidenav {
     position: absolute;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
+    /* background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9); */
+    background-color: #fff;
     overflow-x: hidden;
     transition: 0.5s;
-    width: 0%;
+    width: 100%;
     top: 0px;
     height: 100%;
     padding: 0px;
     right: -26px;
     padding: 20px;
+    z-index: 1;
 }
 
 .closebtn {
     position: absolute;
     right: 69px;
     top: 0px;
-    color: #fff !important;
+    color: #000 !important;
     font-size: 50px;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .downButton {
@@ -421,6 +424,7 @@ td {
         display: none;
     }
 }
+
 .creator-avatar {
     width: 40px;
     height: 40px;
@@ -480,4 +484,65 @@ td {
     font-size: 14px;
     text-decoration: none;
     cursor: pointer;
+}
+
+.form-control {
+    border: 1px solid #000 !important;
+}
+
+.lableHead {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+}
+
+/* Custom Styles for Range Slider */
+.custom-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    /* Default neutral background */
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+/* Style for the slider thumb */
+.custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #6c3bff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(108, 59, 255, 0.3);
+    border: 2px solid #fff;
+}
+
+/* Moz specific thumb style */
+.custom-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #6c3bff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(108, 59, 255, 0.3);
+}
+
+/* Slider thumb hover effect */
+.custom-range:hover::-webkit-slider-thumb {
+    background: #5a33e0;
+    box-shadow: 0 0 15px rgba(108, 59, 255, 0.5);
+}
+
+/* Focus hover effect for Mozilla */
+.custom-range:hover::-moz-range-thumb {
+    background: #5a33e0;
 }
