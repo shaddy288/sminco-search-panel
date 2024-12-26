@@ -355,17 +355,17 @@ body {
     top: 0px;
     height: 100%;
     padding: 0px;
-    right: -26px;
+    right: 0px;
     padding: 20px;
     z-index: 1;
 }
 
 .closebtn {
     position: absolute;
-    right: 69px;
-    top: 0px;
+    right: 30px;
+    top: 7px;
     color: #000 !important;
-    font-size: 50px;
+    font-size: 34px;
     text-decoration: none !important;
 }
 
@@ -493,6 +493,7 @@ td {
 .lableHead {
     font-weight: bold;
     font-size: 18px;
+    color: #7c186c;
 }
 
 .form-control:focus {
@@ -545,4 +546,10 @@ td {
 /* Focus hover effect for Mozilla */
 .custom-range:hover::-moz-range-thumb {
     background: #5a33e0;
+}
+
+.boxshadow {
+    -webkit-box-shadow: 1px 4px 5px -1px rgba(199, 199, 199, 1);
+    -moz-box-shadow: 1px 4px 5px -1px rgba(199, 199, 199, 1);
+    box-shadow: 1px 4px 5px -1px rgba(199, 199, 199, 1);
 }

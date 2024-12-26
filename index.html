@@ -117,14 +117,14 @@
                                     </div>
                                 </div>
                                 <div class="sidenav" id="sideNav">
-                                    <div class="head mb-3">
-                                        <h1 class="text-white">All Filter</h1>
+                                    <div class="head mb-3 border-bottom">
+                                        <h2>All Filter</h2>
                                     </div>
                                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
                                         <h1>&times;</h1>
                                     </a>
-                                    <div class="row">
-                                        <div class="col-md-4 mb-2">
+                                    <div class="row border-bottom boxshadow">
+                                        <div class="col-md-4 mb-2 border-right">
                                             <div class="form-group">
                                                 <label class="lableHead" for="exampleFormControlSelect1">Average
                                                     likes</label>
@@ -168,23 +168,20 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 mb-2">
+                                        <div class="col-md-4 mb-2 border-right">
                                             <label class="lableHead" for="customRange1">
-                                                <span style="color: #6c3bff; font-weight: bold;">+ Engagement
-                                                    rate</span>
-                                                <i class="bi bi-info-circle" style="color: #6c3bff;"></i>
+                                                <span>Engagement rate</span>
                                             </label>
-                                            <div id="rangeValue" class="d-block mt-1 font-weight-bold text-dark">> 0%
+                                            <div id="rangeValue" class="d-block font-weight-bold text-dark">> 0%
                                             </div>
                                             <input type="range" class="form-range custom-range" id="customRange1"
                                                 min="0" max="100" value="0" oninput="updateRangeValue(this.value)">
                                         </div>
                                         <div class="col-md-4 mb-2">
                                             <label class="lableHead" for="customRange1">Has sponsored posts?</label>
-                                            <div class="checkbox">
+                                            <div class="checkbox pt-4">
                                                 <input type="checkbox" class="" />
-                                                <span>Only show accounts with sponsored
-                                                    posts</span>
+                                                <span>Only show accounts with sponsored posts</span>
                                             </div>
                                         </div>
                                     </div>
