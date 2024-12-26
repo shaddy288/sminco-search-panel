@@ -1,12 +1,12 @@
 let currentOffset = 0;
 const limit = 10;
-let sort_by = { field: "FOLLOWER_COUNT", order: "DESCENDING"};
+let sort_by = { field: "FOLLOWER_COUNT", order: "DESCENDING" };
 let platform = "insta";
 let follower_count = { min: null, max: null };
 let topic = "";
 
 function openNav() {
-  document.getElementById("sideNav").style.width = "80%";
+  document.getElementById("sideNav").style.width = "100%";
 }
 
 function closeNav() {
@@ -14,11 +14,11 @@ function closeNav() {
 }
 
 async function fetchCreators(offset, limit, platform, sort_by, follower_count, topic) {
-  const url = `http://localhost:5003/api/influencer/v1/fetch-creators`;
+  const url = `http://5500/api/influencer/v1/fetch-creators`;
   const postData = {
     offset: offset,
     limit: limit,
-    platform:platform,
+    platform: platform,
     sort_by: sort_by,
     follower_count: follower_count,
     topic: topic,
@@ -137,9 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
   const button = document.getElementById("loadMoreButton");
 
-  if(topic)
-  {
-    this.topic=topic;
+  if (topic) {
+    this.topic = topic;
   }
 
   platformSelect.addEventListener("change", function () {
@@ -190,54 +189,54 @@ document.addEventListener("DOMContentLoaded", function () {
   let selectedFilters = {};
 
   function updateFiltersDisplay() {
-      filterTags.innerHTML = "";
-      Object.keys(selectedFilters).forEach((key) => {
-          const value = selectedFilters[key];
-          const filterTag = document.createElement("div");
-          filterTag.className = "filter-tag";
-          filterTag.innerHTML = `
+    filterTags.innerHTML = "";
+    Object.keys(selectedFilters).forEach((key) => {
+      const value = selectedFilters[key];
+      const filterTag = document.createElement("div");
+      filterTag.className = "filter-tag";
+      filterTag.innerHTML = `
               <span>${key}: ${value}</span>
               <span class="remove-filter" data-filter="${key}">&times;</span>
           `;
-          filterTags.appendChild(filterTag);
-      });
-      clearFilters.style.display = Object.keys(selectedFilters).length > 0 ? "block" : "none";
+      filterTags.appendChild(filterTag);
+    });
+    clearFilters.style.display = Object.keys(selectedFilters).length > 0 ? "block" : "none";
 
-      // Add event listeners for individual filter removal
-      document.querySelectorAll(".remove-filter").forEach((removeIcon) => {
-          removeIcon.addEventListener("click", function () {
-              const filterKey = this.getAttribute("data-filter");
-              delete selectedFilters[filterKey];
-              updateFiltersDisplay();
-          });
+    // Add event listeners for individual filter removal
+    document.querySelectorAll(".remove-filter").forEach((removeIcon) => {
+      removeIcon.addEventListener("click", function () {
+        const filterKey = this.getAttribute("data-filter");
+        delete selectedFilters[filterKey];
+        updateFiltersDisplay();
       });
+    });
   }
 
   platformSelect.addEventListener("change", function () {
-      selectedFilters["Platform"] = platformSelect.options[platformSelect.selectedIndex].text;
-      updateFiltersDisplay();
+    selectedFilters["Platform"] = platformSelect.options[platformSelect.selectedIndex].text;
+    updateFiltersDisplay();
   });
 
   followersFrom.addEventListener("change", function () {
-      const fromValue = followersFrom.options[followersFrom.selectedIndex].text;
-      const toValue = followersTo.options[followersTo.selectedIndex]?.text || "Any";
-      selectedFilters["Followers"] = `${fromValue} - ${toValue}`;
-      updateFiltersDisplay();
+    const fromValue = followersFrom.options[followersFrom.selectedIndex].text;
+    const toValue = followersTo.options[followersTo.selectedIndex]?.text || "Any";
+    selectedFilters["Followers"] = `${fromValue} - ${toValue}`;
+    updateFiltersDisplay();
   });
 
   followersTo.addEventListener("change", function () {
-      const fromValue = followersFrom.options[followersFrom.selectedIndex]?.text || "Any";
-      const toValue = followersTo.options[followersTo.selectedIndex].text;
-      selectedFilters["Followers"] = `${fromValue} - ${toValue}`;
-      updateFiltersDisplay();
+    const fromValue = followersFrom.options[followersFrom.selectedIndex]?.text || "Any";
+    const toValue = followersTo.options[followersTo.selectedIndex].text;
+    selectedFilters["Followers"] = `${fromValue} - ${toValue}`;
+    updateFiltersDisplay();
   });
 
   clearFilters.addEventListener("click", function () {
-      selectedFilters = {};
-      platformSelect.value = "insta";
-      followersFrom.value = "0";
-      followersTo.value = "0";
-      updateFiltersDisplay();
+    selectedFilters = {};
+    platformSelect.value = "insta";
+    followersFrom.value = "0";
+    followersTo.value = "0";
+    updateFiltersDisplay();
   });
 
   updateFiltersDisplay();
